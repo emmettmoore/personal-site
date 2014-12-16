@@ -1,0 +1,135 @@
+section h2 {
+	position: absolute;
+	font-weight: lighter;
+	transform: rotate(-90deg);
+	transform-origin: left top;
+	left: -4%;
+	top: 50%;
+}
+section {
+	position: relative;
+	height: 39vh;
+	width: 90%;
+	margin: 2vh 5% 10vh 5%;
+	border-top: 1px solid lightgray;
+	display: block;
+}
+#intro {
+	line-height: 1.4em;
+	font-weight: lighter;
+}
+	#explanation {
+		width: 60%;
+		height: 95%;
+		float: left;
+		/*overflow-y: scroll;*/
+	}
+	#demo {
+		border-left: 1px solid lightgray;
+		width: 39%;
+		height: 95%;
+		/*border: 1px solid lightgray;*/
+		float: right;
+	}
+		#demo-info {
+			/*position: relative;*/
+			width: 80%;
+			height: 100%;
+			float: left;
+			line-height: 1em;
+			text-align: center;
+		}
+		#demo-graph {
+			width: 10%;
+			height: 100%;
+			margin-left: 85%;
+		}
+		#demo .demo {
+			font-size: 11pt;
+		}
+.soft {
+    color: blue;
+}
+.hard {
+    color: red;
+}
+.fair {
+    color: black;
+}
+#map-section {
+	margin-top: 1vh;
+	margin-bottom: 1vh;
+	height: 49vh;
+}
+#crag-map {
+	position: relative;
+	width: 55%;
+	height: 100%;
+	margin: 0 auto;
+}
+
+#all-crags-graph, #routes-graph, #route-info {
+	/*height: 220px;*/
+	height: 80%;
+	/*border-top: 1px solid lightgray;*/
+	padding-top: 10px;
+	/*width: 90%;*/
+	/*margin-left: 5%;*/
+}
+
+
+#routes-graph {
+	height: 50%;
+	margin-bottom: 2%;
+}
+#routes-graph .bar-label {
+	display: none;
+	transform: initial;
+	width: 5px;
+	height: 5px;
+	border-radius: 5px;
+	background-color: rgb(40,40,40);
+	margin 0 auto;
+	bottom: -10px;
+}
+#routes-graph .bar-highlighted .bar-label {
+	display: initial;
+}
+
+#route-info {
+	height: 50%;
+	border-top: 1px dashed lightgray;
+}
+	#route-info > p {
+		margin: 0;
+		text-align: center;
+	}
+	#route-name {
+		font-weight: bold;
+		text-align: center;
+	}
+
+	#route-comments {
+		margin-top: 10px;
+		font-weight: lighter;
+	}
+	#route-comments > div {
+		width: 33%;
+		display: inline-block;
+		vertical-align: top;
+	}
+		#fair-comment { text-align: center; }
+		#soft-comment { text-align: right; }
+
+body {
+	font-family: sans-serif;
+}
+
+h1 {
+	text-align: center;
+}
+
+.sandbag-graph .clicked {
+	padding-bottom: 2px;
+	border-bottom: 2px solid rgb(40,40,40);
+}

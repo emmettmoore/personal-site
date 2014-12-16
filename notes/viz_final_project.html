@@ -1,0 +1,70 @@
+<p><!DOCTYPE html>
+<html>
+<head>
+        <title>Viz Final Project Ideas</title>
+        <link rel="stylesheet" type="tex`t/css" href="style.css">
+</head>
+<body></p>
+
+<h1>Visualization Final Project Ideas</h1>
+
+<h2><a href="http://www.8a.nu/" title="8a.nu">8a.nu</a> Visualization</h2>
+
+<h3>Possible Stories</h3>
+
+<ol>
+<li>Routes that are popular are soft.</li>
+<li>Visualize areas that are soft vs. sandbagged (heatmap)</li>
+<li>(Even simpler) visualize traffic to different areas</li>
+<li>Visualize who travels to where</li>
+<li>Where people from certain areas typically climb.... Unique URL from "city score" page.</li>
+</ol>
+
+<h3>Complications</h3>
+
+<ol>
+<li>Complex. Requires determining a valid metric of soft vs. sandbagged, classics vs. non-classics.
+<ul>
+<li>Notes that the data in this database <em>only includes ascents</em>. This means that we have no data on the opinions of those that may have gotten pummeled on a route. </li>
+<li>This means that there is probably no easy way to detect that sandbags are not "classic".</li>
+</ul></li>
+<li>8a combines unreliable user data with poor organization.
+<ul>
+<li>Users log routes, and 8a adds a new climb to the database if there is not "collision".</li>
+<li>The site doesn't give a useful link (it is "8a.nu") for each page until reached individual climbs, or user pages.
+<ul>
+<li>This is a problem for Scrapy.. see below</li>
+</ul></li>
+<li>If a climb is logged with two different grades in the database, we will see it twice in the "area" list. Both links will go to the same place, however.</li>
+<li>This allows for users to accidentally spell climbs wrong and have them added to the DB wrong.</li>
+<li>Anonymous accounts must be filtered out (don't go to an actual logbook; just says "this user is anonymous").</li>
+</ul></li>
+</ol>
+
+<h3>Things to change in ParseHub</h3>
+
+<ul>
+<li>Get all the ascents for every climb, </li>
+<li>Get all the routes for the area. But don't get a climb with less than 20 ascents. </li>
+</ul>
+
+<h3>Description</h3>
+
+<ul>
+<li>Climbing grades just don't make sense. Grades, which are intended to judge the difficulty of a route, are notoriously subjective. For years, climbers have bickered over whether certain routes are soft (easy for the grade), fair, or sandbagged (hard). Eventually friendly turf wars developed with some climbers proclaiming their home crag's grades as fair while dissing other areas by calling their grades "soft". In one <a href="http://www.climbing.com/climber/red-vs-new/" title="Red vs. New">article</a> chronicling the annual rivalry basketball game between two famous areas, the Red River Gorge and the New River Gorge, one local dissed the Red by calling it "a technique-optional outdoor gym with soft grades" Can we definitively determine whether the Red really is soft? Probably not, but we can visualize the consensus of routes that thousands of <a href="http://www.8a.nu/" title="8a.nu">8a.nu</a> have come to. 8a.nu allows climbers to log their ascents, write a comment, and declare a route "Soft" or "Hard" for the grade. Below are our findings.</li>
+</ul>
+
+<h3>Tools</h3>
+
+<ul>
+<li><a href="http://bl.ocksplorer.org" title="blocksplorer.org">Free D3 Code!</a></li>
+<li><a href="https://github.com/mbostock/" title="D3 Notes">D3 Notes</a></li>
+</ul>
+
+<h3>Scraping Libraries</h3>
+
+<ul>
+<li><a href="http://scrapy.org/" title="Scrapy">Scrapy</a>
+</body>
+</html></li>
+</ul>

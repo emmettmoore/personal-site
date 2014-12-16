@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<head>
+<script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+<script src="lib/tracker.js"></script>
+<script src="lib/reactive-var.js"></script>
+<script src="sandbag.js"></script>
+<link rel="stylesheet" href="sandbag.css" />
+	<style>
+		#sbg {
+			height: 200px;
+			border-bottom: 1px solid lightgray;
+			margin-bottom: 20px;
+		}
+		.highlighted {
+			font-weight: bold;
+		}
+	</style>
+</head>
+<body>
+
+	<div id="sbg"></div>
+	<div id="names"></div>
+	<button onclick="addData()">Add data</button>
+	<button onclick="removeData()">Remove data</button>
+	<button onclick="incrementData(.2)">Increase data</button>
+	<button onclick="incrementData(-.2)">Decrease data</button>
+
+<script>
+var hovered = new ReactiveVar();
+var data = new ReactiveVar([
+	{
+		name: "the red",
+		fairness: [-.2, -.1, 0, 0, 0, 0, .2]
+	}
+]);
+
+var newData = [
+	{
+		name: "the new river gorge",
+		fairness: [-1, -.3, -.2, -.15, -.02, 0, 0, 0, 0, 0, 0, 0, 0, .2, .6, .6]
+	},{
+		name: "rumney",
+		fairness: [-.2, -.1, -.03, -.02, -.02, 0, 0, 0,0,0,0,0,0,0,0,0,.1,.1,.1,.12,.14,.16,.18,.23,.29,.38,.45,.62,.66]
+	},{
+		name: "gunks",
+		fairness: [-.2,0,0,.03,.05,.06,.1,.1,.2,.2,.5,.6,.7,.7,.8,.9,.95]
+	}
+];
+
+graph = sandBagGraph();
+
+graph.hover(setRef(hovered), setRef(hovered, null));
+
+var sbg = d3.select('#sbg')
+	sbg.datum(data)
+	.call(graph)
+	;
+
+
+d3.select("#names").selectAll('p').data(data).enter()
+	.append("p")
+	.text(function(d) { return d.name })
+	.on("mouseenter", setRef(hovered))
+	.on("mouseleave", setRef(hovered, null))
+	;
+
+Tracker.autorun(function updateGraphData() {
+	var d = data.get();
+	sbg.datum(d)
+		.call(graph);
+});
+Tracker.autorun(function updateTextData() {
+	var d = data.get();
+	var names = d3.select("#names").selectAll('p').data(d);
+
+	names.enter()
+		.append("p")
+		.on("mouseenter", setRef(hovered))
+		.on("mouseleave", setRef(hovered, null))
+		;
+
+	names
+		.text(function(d) { return d.name })
+
+	names.exit().remove()
+})
+Tracker.autorun(function updateGraphHighlighted() {
+	var ref = hovered.get();
+	if (!ref) {
+		sbg.call(graph.highlighter(null));
+	} else {
+		sbg.call(graph.highlighter(ref.d, ref.i));
+	}
+});
+Tracker.autorun(function updateTextHighlighted() {
+	var ref = hovered.get();
+	if (!ref) {
+		d3.selectAll("#names p").classed("highlighted", false);
+	} else {
+		var want = d3.selectAll("#names p").select(hasdata(ref.d))
+		want.classed("highlighted", true);
+	}
+});
+
+function addData() {
+	var currentData = data.get();
+	currentData.push( newData.pop() );
+	data.set(currentData);
+}
+function removeData() {
+	var currentData = data.get();
+	newData.push( currentData.pop() );
+	data.set(currentData);
+}
+function incrementData(amt) {
+	var currentData = data.get();
+	for (var i = currentData.length - 1; i >= 0; i--) {
+		var area = currentData[i];
+		for (var j = area.fairness.length - 1; j >= 0; j--) {
+			area.fairness[j] = area.fairness[j] + amt;
+		};
+	};
+	data.set(currentData);
+}
+
+</script>
+
+</body>
