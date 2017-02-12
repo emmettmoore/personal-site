@@ -13,7 +13,7 @@ var color = d3.scale.linear()
 
 var fills = {}
 var fillKeys = {}
-var url = "8a_viz/prod-data/8a-gl-filtered.json";
+var url = "prod-data/8a-gl-filtered.json";
 
 d3.json(url, function(err, response) {
     var raw_crags = response;
