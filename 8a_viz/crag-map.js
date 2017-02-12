@@ -13,7 +13,7 @@ var color = d3.scale.linear()
 
 var fills = {}
 var fillKeys = {}
-var url = "/prod-data/8a-gl-filtered.json";
+var url = "8a_viz/prod-data/8a-gl-filtered.json";
 
 d3.json(url, function(err, response) {
     var raw_crags = response;
@@ -199,7 +199,7 @@ function load_crags(raw_crags) {
             popupOnHover: false,
             highlightOnHover: false,
             borderColor: '#FFB680'
-        }, 
+        },
         bubblesConfig: {
             borderWidth: 2,
             borderColor: '#000000',
@@ -228,7 +228,7 @@ function load_crags(raw_crags) {
     }
     //draw bubbles for crags
      crag_map.bubbles(crags, {
-        popupTemplate: function (geo, data) { 
+        popupTemplate: function (geo, data) {
             return ['<div class="hoverinfo">' +  data.name,
             '</div>'].join('');
         }
