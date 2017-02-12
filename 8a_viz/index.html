@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!-- <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.5.min.js" type="text/javascript"></script> -->
+<!-- <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.9/jquery-ui.min.js" type="text/javascript"></script> -->
+	<script src="http://d3js.org/d3.v3.min.js"></script>
+	<script src="http://d3js.org/topojson.v1.min.js"></script>
+<!-- <script src="/prod-data/datamaps/datamaps.all.min.js"></script> -->
+	<script src="prod-data/datamaps/datamaps.all.js"></script>
+
+	<script src="lib/tracker.js"></script>
+	<script src="lib/reactive-var.js"></script>
+	<script src="sandbag.js"></script>
+	<link rel="stylesheet" href="sandbag.css" />
+	<link rel="stylesheet" href="rockscrapers.css" />
+</head>
+<body>
+
+
+
+<section id="intro">
+	<h1>Rock Scrapers</h1>
+	<div id="explanation">
+		<p>Climbing grades just don't make sense. Grades are intended to judge the difficulty of a route but are notoriously subjective. For years, climbers have bickered over whether certain routes are soft (easy for the grade), fair, or sandbagged (hard). Eventually, friendly turf wars developed with some climbers proclaiming their home crag's grades as fair while dissing other areas by calling their grades "soft". In one <a href="http://www.climbing.com/climber/red-vs-new/" title="Red vs. New">article</a> chronicling the annual rivalry basketball game between two famous areas, the Red River Gorge and the New River Gorge, one local dissed the Red by calling it "a technique-optional outdoor gym with soft grades". Can we definitively determine that the Red really is soft? Probably not, but we can visualize the grade consensus of routes that thousands of <a href="http://www.8a.nu/" title="8a.nu">8a.nu</a> users have come to. 8a.nu allows climbers to log their ascents, write a comment, and declare a route "Soft" or "Hard" for the grade. Below are our findings.</p>
+	</div>
+	<div id="demo">
+		<div id="demo-info">
+			<!-- <h2 style="left: 1%; top: 80%">How this works</h2> -->
+			<h3>How This Works:</h3>
+			<p>
+				<ul><li>Bars show the fairness for a single route (from fairness opinions of ascentionists) or for an area (from fairness of climbs).</li>
+                    <li> Fairness Score Legend: <span class="soft">Soft is -1. </span><span class="fair">Fair is 0. </span><span class='hard'>Hard is 1.</span> </li>
+			</p>
+			<p id="demo-route" class="demo"></p>
+			<p id="demo-stats" class="demo"></p>
+			<p id="demo-fairness" class="demo"></p>
+		</div>
+		<div id="demo-graph">
+		</div>
+	</div>
+</section>
+<section id="map-section">
+	<div id="crag-map"></div>
+</section>
+<section>
+	<h2>Crags</h2>
+	<div id="all-crags-graph"></div>
+</section>
+<section>
+	<h2>Routes</h2>
+	<div id="routes-graph"></div>
+	<div id="route-info">
+		<div id="route-name"></div>
+		<p id="route-grade"></p>
+		<p id="route-stats"></p>
+		<p id="route-fairness"></p>
+		<div id="route-comments">
+			<div id="hard-comment">
+				<strong>Found it <span class="hard">hard</span>:</strong>
+				<p></p>
+			</div>
+			<div id="fair-comment">
+				<strong>Found it fair:</strong>
+				<p></p>
+			</div>
+			<div id="soft-comment">
+				<strong>Found it <span class="soft">soft</span>:</strong>
+				<p></p>
+			</div>
+		</div>
+	</div>
+</section>
+
+</body>
+<script src="./crag-map.js"></script>
+</html>
