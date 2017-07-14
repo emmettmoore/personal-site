@@ -1,7 +1,9 @@
-from . import views
-
 from django.conf.urls import url
 
-url_patterns = [
-    url(r'^$', views.climbing_viz, name="climbing_viz"),
+from . import views
+
+
+urlpatterns = [
+    url(r'^$', views.index, name='index'),
+    url(r'^8a_viz/$', views.climbing_viz, name="climbing_viz"),
 ]
