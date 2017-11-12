@@ -3,3 +3,4 @@
 8a_viz/data
 db
 *.pyc
+ebase/db.sqlite3
