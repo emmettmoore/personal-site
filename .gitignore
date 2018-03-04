@@ -4,3 +4,5 @@
 db
 *.pyc
 ebase/db.sqlite3
+ebase/main/node_modules
+ebase/main/static/main/build/
