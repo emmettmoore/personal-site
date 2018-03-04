@@ -1,0 +1,23 @@
+.top-bar, .top-bar ul {
+  background-color: #363534;
+}
+
+.top-bar {
+  border-bottom: 3px solid #F0F0F0;
+}
+
+
+li.top-bar-title {
+  padding: 11px 20px 11px 11px;
+  color: white;
+}
+
+li > a {
+  color: white;
+  font-weight: 700;
+}
+
+li > a:hover {
+  color: #56abff;
+  font-weight: 700;
+}
