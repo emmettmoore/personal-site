@@ -1,0 +1,18 @@
+{% extends "main/base.html" %}
+{% load staticfiles %}
+{% block main_content %}
+<div class="main-content">
+  <div class="main-content-body">
+    <div class="medium-space-left">
+      <h5 class="bold">I am a technologist, living in Somerville, MA.</h5>
+      <h5 class="bold">I am passionate about using web technologies to simplify complex systems.</h5>
+      <h5 class="bold">I love rock climbing, literature, and music.</h5>
+    </div>
+  </div>
+  <div class="main-content-footer">
+    Footer
+    <link href="{% static "main/assets/github-mark.png" %}"
+          rel="icon" type="image/png" sizes="16x16">
+  </div>
+</div>
+{% endblock main_content %}
