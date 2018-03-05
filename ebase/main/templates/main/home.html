@@ -1,18 +1,33 @@
 {% extends "main/base.html" %}
 {% load staticfiles %}
 {% block main_content %}
-<div class="main-content">
-  <div class="main-content-body">
+<div class="body-wrapper">
+  <div class="about-me">
     <div class="medium-space-left">
       <h5 class="bold">I am a technologist, living in Somerville, MA.</h5>
-      <h5 class="bold">I am passionate about using web technologies to simplify complex systems.</h5>
-      <h5 class="bold">I love rock climbing, literature, and music.</h5>
+      <h5 class="bold">Bacon ipsum dolor amet kielbasa tail pork loin.</h5>
+      <h5 class="bold">Salami cow tenderloin, prosciutto short ribs capicola tongue drumstick turducken pork belly jerky alcatra.</h5>
     </div>
   </div>
-  <div class="main-content-footer">
-    Footer
-    <link href="{% static "main/assets/github-mark.png" %}"
-          rel="icon" type="image/png" sizes="16x16">
+  <div class="footer">
+    <div class="row">
+      <div class="about-site columns small-6">
+        This site was built with
+        <ul class="bold">
+          <li>Django</li>
+          <li>Gulp</li>
+          <li>Foundation</li>
+        </ul>
+      </div>
+      <div class="social columns small-6">
+        <a class="icon-wrapper" href="https://www.github.com/ewmoore823" target="_blank">
+          <i class="fab fa-github-square"></i>
+        </a>
+        <a class="icon-wrapper medium-space-left" href="https://www.linkedin.com/in/emmett-moore" target="_blank">
+          <i class="fab fa-linkedin"></i>
+        </a>
+      </div>
+    </div>
   </div>
 </div>
 {% endblock main_content %}
