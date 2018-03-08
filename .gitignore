@@ -3,5 +3,4 @@
 *.pyc
 db.sqlite3
 main/node_modules
-main/static/main/build/
 staticfiles
