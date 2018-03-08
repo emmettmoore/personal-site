@@ -1,8 +1,6 @@
 .DS_Store
 *.ipynb_checkpoints
-8a_viz/data
-db
 *.pyc
-ebase/db.sqlite3
-ebase/main/node_modules
-ebase/main/static/main/build/
+db.sqlite3
+main/node_modules
+main/static/main/build/
