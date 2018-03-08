@@ -1,0 +1,11 @@
+{% extends "main/base.html" %}
+{% load staticfiles %}
+{% block extra_assets %}
+  {{ block.super }}
+  <script src="https://d3js.org/d3.v4.min.js"></script>
+  <script src="{% static "main/d3/d3.js" %}"></script>
+{% endblock extra_assets %}
+
+{% block main_content %}
+  Timeline
+{% endblock main_content %}

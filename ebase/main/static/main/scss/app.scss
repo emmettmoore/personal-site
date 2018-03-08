@@ -1,0 +1,63 @@
+@import 'eb-colors';
+
+nav.top-bar {
+  border-bottom: 3px solid $eb-blue;
+  background-color: $eb-blue;
+
+  ul.dropdown.menu {
+    background-color: $eb-blue;
+  }
+
+  li {
+    &.top-bar-title {
+      padding: 11px 20px 11px 11px;
+      color: $eb-white;
+    }
+    > a {
+      font-weight: 700;
+      margin: 11px 11px 5px 11px;
+      padding: 0px 0px 6px 0px;
+      &:hover {
+        padding: 0px 0px 4px 0px;
+        border-bottom: 2px solid $eb-orange;
+      }
+    }
+  }
+}
+
+.body-wrapper {
+  position: relative;
+  margin: 0;
+  padding-bottom: 6rem;
+  min-height: 100%;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+}
+
+.about-me {
+  padding-bottom: 348px;
+  padding-top: 40px;
+  max-width: 50%;
+}
+
+.footer {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: $eb-blue;
+  color: $eb-white;
+  .about-site {
+    padding-top: 8px;
+    text-align: left;
+    > ul {
+      margin: 0px 0px 8px 8px;
+    }
+    li {
+      list-style-type: none;
+    }
+  }
+  .social {
+    text-align: right;
+    padding-top: 21px;
+  }
+}
