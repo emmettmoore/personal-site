@@ -1,2 +1,0 @@
-python process-data.py ../data/8a-gl-filtered.json
-cat json/8a-gl-filtered.json | python -m json.tool > ../prod-data/8a-gl-filtered.json
