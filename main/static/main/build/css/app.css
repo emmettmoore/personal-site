@@ -10,6 +10,7 @@ nav.top-bar li.top-bar-title {
   color: #FFFFFF; }
 
 nav.top-bar li > a {
+  color: #FFFFFF !important;
   font-weight: 700;
   margin: 11px 11px 5px 11px;
   padding: 0px 0px 6px 0px; }
@@ -51,3 +52,15 @@ nav.top-bar li > a:hover {
 .footer .social {
   text-align: right;
   padding-top: 21px; }
+
+.footer .icon-wrapper {
+  margin-top: 10px;
+  font-size: 3em; }
+
+.footer .icon-wrapper .fab {
+  color: #FFFFFF; }
+
+.footer .icon-wrapper .fab:hover {
+  color: #E08002; }
+
+/*# sourceMappingURL=maps/app.css.map */

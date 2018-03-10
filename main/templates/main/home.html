@@ -1,33 +1,17 @@
 {% extends "main/base.html" %}
 {% load staticfiles %}
+
 {% block main_content %}
-<div class="body-wrapper">
-  <div class="about-me">
-    <div class="medium-space-left">
-      <h5 class="bold">I am a technologist, living in Somerville, MA.</h5>
-      <h5 class="bold">Bacon ipsum dolor amet kielbasa tail pork loin.</h5>
-      <h5 class="bold">Salami cow tenderloin, prosciutto short ribs capicola tongue drumstick turducken pork belly jerky alcatra.</h5>
-    </div>
-  </div>
-  <div class="footer">
-    <div class="row">
-      <div class="about-site columns small-6">
-        This site was built with
-        <ul class="bold">
-          <li>Django</li>
-          <li>Gulp</li>
-          <li>Foundation</li>
-        </ul>
-      </div>
-      <div class="social columns small-6">
-        <a class="icon-wrapper" href="https://www.github.com/ewmoore823" target="_blank">
-          <i class="fab fa-github-square"></i>
-        </a>
-        <a class="icon-wrapper medium-space-left" href="https://www.linkedin.com/in/emmett-moore" target="_blank">
-          <i class="fab fa-linkedin"></i>
-        </a>
+  <div class="body-wrapper">
+    <div class="about-me">
+      <div class="medium-space-left">
+        <h5 class="bold">I am a technologist, living in Somerville, MA.</h5>
+        <p>
+          I graduated from Tufts University in 2015 with a BS in Computer Science.
+          I am now a software engineer at <a href="https://www.insightsquared.com">InsightSquared</a>.
+          In my free time I enjoy rock climbing, especially when it brings me to new places.
+        </p>
       </div>
     </div>
   </div>
-</div>
 {% endblock main_content %}

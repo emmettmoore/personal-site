@@ -2,6 +2,7 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <link rel="shortcut icon" href="{% static "main/favicon.ico" %}" />
     <title>Emmett Moore</title>
     {% block foundation %}
     <link href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" rel="stylesheet">
@@ -38,6 +39,35 @@
     {% block main_content %}
       Override me.
     {% endblock main_content %}
+    {% block footer %}
+      <div class="footer">
+        <div class="row">
+          <div class="about-site columns small-2">
+            This site was built with
+            <ul class="bold">
+              <li>Django</li>
+              <li>Gulp</li>
+              <li>Foundation</li>
+            </ul>
+          </div>
+          <div class="about-site columns small-4">
+            <br>
+            <ul class="bold">
+              <li>Heroku</li>
+              <li>SCSS</li>
+            </ul>
+          </div>
+          <div class="social columns small-6">
+            <a class="icon-wrapper" href="https://www.github.com/ewmoore823" target="_blank">
+              <i class="fab fa-github-square"></i>
+            </a>
+            <a class="icon-wrapper medium-space-left" href="https://www.linkedin.com/in/emmett-moore" target="_blank">
+              <i class="fab fa-linkedin"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    {% endblock footer %}
   {% endblock body %}
   </body>
 </html>

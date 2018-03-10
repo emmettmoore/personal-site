@@ -1,15 +1,10 @@
+.medium-space-top {
+  margin-top: 20px; }
+
 .medium-space-left {
   margin-left: 20px; }
 
 .bold {
   font-weight: 700; }
 
-.icon-wrapper {
-  margin-top: 10px;
-  font-size: 3em; }
-
-.icon-wrapper .fab:hover {
-  color: #E08002; }
-
-a, a:hover {
-  color: #FFFFFF !important; }
+/*# sourceMappingURL=maps/eb-core.css.map */

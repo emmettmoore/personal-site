@@ -1,21 +1,13 @@
 @import 'eb-colors';
+
+.medium-space-top {
+  margin-top: 20px;
+}
+
 .medium-space-left {
   margin-left: 20px;
 }
 
 .bold {
   font-weight: 700;
-}
-
-.icon-wrapper {
-  margin-top: 10px;
-  font-size: 3em;
-  .fab:hover {
-    color: $eb-orange;
-  }
-}
-
-a, a:hover {
-  color: $eb-white !important;
-
 }
