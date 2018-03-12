@@ -4,3 +4,4 @@
 db.sqlite3
 main/node_modules
 staticfiles
+main/static/main/build/
