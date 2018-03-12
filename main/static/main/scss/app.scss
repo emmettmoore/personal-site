@@ -56,7 +56,7 @@ nav.top-bar {
   background-color: $eb-blue;
   color: $eb-white;
   .about-site {
-    width: 25%;
+    margin: 7px;
     flex: 1;
     ul {
       margin: 8px;
@@ -74,7 +74,8 @@ nav.top-bar {
     flex: 2;
   }
   .social {
-    padding: 15px 21px 0px 0px;
+    padding: 23px 21px 0px 0px;
+    margin-right: 13px;
   }
   .icon-wrapper {
     font-size: 3em;
