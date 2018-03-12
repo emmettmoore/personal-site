@@ -3,7 +3,7 @@
     "version": "0.0.1",
     "dependencies": {
         "gulp": "3.9.1"
-    }
+    },
     "scripts": {
       "postinstall": "./node_modules/.bin/gulp"
     }
