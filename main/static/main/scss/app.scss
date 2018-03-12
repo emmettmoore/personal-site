@@ -1,5 +1,19 @@
 @import 'eb-colors';
 
+$footer-height: 120px;
+
+html {
+  height: 100%;
+}
+
+body {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+
 nav.top-bar {
   border-bottom: 3px solid $eb-blue;
   background-color: $eb-blue;
@@ -26,43 +40,44 @@ nav.top-bar {
   }
 }
 
-.body-wrapper {
-  position: relative;
-  margin: 0;
-  padding-bottom: 6rem;
-  min-height: 100%;
+.viewport-content {
+  flex: 1;
   font-family: "Helvetica Neue", Arial, sans-serif;
 }
 
 .about-me {
-  padding-bottom: 348px;
   padding-top: 40px;
   max-width: 50%;
 }
 
 .footer {
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 100%;
+  display: flex;
+  height: $footer-height;
   background-color: $eb-blue;
   color: $eb-white;
   .about-site {
-    padding-top: 8px;
-    text-align: left;
-    > ul {
-      margin: 0px 0px 8px 8px;
+    margin: 7px;
+    flex: 1;
+    ul {
+      margin: 8px;
+      overflow: hidden;
     }
     li {
+      width: 50%;
       list-style-type: none;
+      line-height: 1.5em;
+      float: left;
+      display: inline;
     }
   }
+  .middle-section {
+    flex: 2;
+  }
   .social {
-    text-align: right;
-    padding-top: 21px;
+    padding: 23px 21px 0px 0px;
+    margin-right: 13px;
   }
   .icon-wrapper {
-    margin-top: 10px;
     font-size: 3em;
     .fab {
       color: $eb-white;

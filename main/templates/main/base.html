@@ -36,35 +36,32 @@
         </div>
       </nav>
     {% endblock top_bar %}
-    {% block main_content %}
-      Override me.
-    {% endblock main_content %}
+    <div class="viewport-content">
+      {% block viewport_content %}
+        Override me.
+      {% endblock viewport_content %}
+    </div>
     {% block footer %}
       <div class="footer">
-        <div class="row">
-          <div class="about-site columns small-2">
-            This site was built with
-            <ul class="bold">
-              <li>Django</li>
-              <li>Gulp</li>
-              <li>Foundation</li>
-            </ul>
-          </div>
-          <div class="about-site columns small-4">
-            <br>
-            <ul class="bold">
-              <li>Heroku</li>
-              <li>SCSS</li>
-            </ul>
-          </div>
-          <div class="social columns small-6">
-            <a class="icon-wrapper" href="https://www.github.com/ewmoore823" target="_blank">
-              <i class="fab fa-github-square"></i>
-            </a>
-            <a class="icon-wrapper medium-space-left" href="https://www.linkedin.com/in/emmett-moore" target="_blank">
-              <i class="fab fa-linkedin"></i>
-            </a>
-          </div>
+        <div class="about-site">
+          This site was built with
+          <ul class="bold">
+            <li>Django</li>
+            <li>Heroku</li>
+            <li>Foundation</li>
+            <li>Gulp</li>
+            <li>SCSS</li>
+          </ul>
+        </div>
+        <div class="middle-section">
+        </div>
+        <div class="social">
+          <a class="icon-wrapper" href="https://www.github.com/ewmoore823" target="_blank">
+            <i class="fab fa-github-square"></i>
+          </a>
+          <a class="icon-wrapper medium-space-left" href="https://www.linkedin.com/in/emmett-moore" target="_blank">
+            <i class="fab fa-linkedin"></i>
+          </a>
         </div>
       </div>
     {% endblock footer %}
