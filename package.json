@@ -2,7 +2,10 @@
     "name": "emmettwmoore-personal-site",
     "version": "0.0.1",
     "dependencies": {
-        "gulp": "3.9.1"
+        "gulp": "3.9.1",
+        "gulp-if": "2.0.2",
+        "gulp-sourcemaps": "2.6.4",
+        "gulp-sass": "3.1.0"
     },
     "scripts": {
       "postinstall": "./node_modules/.bin/gulp"
