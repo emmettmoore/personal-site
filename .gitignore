@@ -2,6 +2,6 @@
 *.ipynb_checkpoints
 *.pyc
 db.sqlite3
-main/node_modules
+node_modules
 staticfiles
 main/static/main/build

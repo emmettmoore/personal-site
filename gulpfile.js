@@ -17,4 +17,4 @@ var sass_task = function(sass_src, sass_dest) {
     }
 };
 
-gulp.task('sass', sass_task('./static/main/scss/*.scss', './static/main/build/css/'));
+gulp.task('sass', sass_task('./main/static/main/scss/*.scss', './main/static/main/build/css/'));
