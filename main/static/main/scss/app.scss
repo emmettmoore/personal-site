@@ -1,6 +1,7 @@
 @import 'eb-colors';
 
 $footer-height: 120px;
+$footer-height-narrow: 198px;
 
 html {
   height: 100%;
@@ -50,32 +51,36 @@ nav.top-bar {
   max-width: 50%;
 }
 
+// media query 750 px: move icons
+
+
 .footer {
-  display: flex;
   height: $footer-height;
   background-color: $eb-blue;
   color: $eb-white;
-  .about-site {
-    margin: 7px;
-    flex: 1;
-    ul {
-      margin: 8px;
-      overflow: hidden;
-    }
-    li {
-      width: 50%;
-      list-style-type: none;
-      line-height: 1.5em;
-      float: left;
-      display: inline;
+  .footer-inner {
+    display: flex;
+    .about-site {
+      margin: 7px 7px 0px 7px;
+      flex: 1;
+      ul {
+        margin: 8px;
+        overflow: hidden;
+      }
+      li {
+        width: 50%;
+        list-style-type: none;
+        line-height: 1.5em;
+        float: left;
+        display: inline;
+      }
     }
   }
   .middle-section {
     flex: 2;
   }
   .social {
-    padding: 23px 21px 0px 0px;
-    margin-right: 13px;
+    padding: 23px 34px 0px 0px;
   }
   .icon-wrapper {
     font-size: 3em;
@@ -84,6 +89,26 @@ nav.top-bar {
     }
     .fab:hover {
         color: $eb-orange;
+    }
+  }
+}
+
+@media (max-width: 750px) {
+  .footer {
+    height: $footer-height-narrow;
+    .footer-inner {
+      .about-site {
+        li {
+          width: 100%;
+          line-height: 1.6em;
+        }
+      }
+    }
+    .social {
+      padding-top: 54px;
+    }
+    .middle-section {
+      flex: 0;
     }
   }
 }
