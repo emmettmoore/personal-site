@@ -5,3 +5,4 @@ db.sqlite3
 node_modules
 staticfiles
 main/static/main/build
+ebase/local_settings.py
