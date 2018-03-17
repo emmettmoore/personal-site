@@ -1,0 +1,14 @@
+@import 'eb-colors';
+.timeline-wrapper {
+  margin: 20px;
+}
+
+
+svg.chart {
+  fill: $eb-blue;
+  g {
+    rect {
+      fill: $eb-orange;
+    }
+  }
+}

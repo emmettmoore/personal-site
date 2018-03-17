@@ -1,11 +1,18 @@
 {% extends "main/base.html" %}
 {% load staticfiles %}
 {% block extra_assets %}
+  <link rel="stylesheet" type="text/css"
+        href="{% static "main/build/css/timeline.css" %}">
+{% endblock extra_assets %}
+{% block after_body_scripts %}
   {{ block.super }}
   <script src="https://d3js.org/d3.v4.min.js"></script>
   <script src="{% static "main/d3/d3.js" %}"></script>
-{% endblock extra_assets %}
+{% endblock after_body_scripts %}
 
 {% block viewport_content %}
-  Timeline
+  <div class="timeline-wrapper">
+    <h3>Days spent Climbing Outside</h3>
+    <svg class="chart"></svg>
+  </div>
 {% endblock viewport_content %}
