@@ -3,24 +3,12 @@
   margin: 20px;
 }
 
-
-svg.chart {
-  fill: $eb-blue;
-  g {
-    rect {
-      fill: $eb-orange;
-    }
-  }
-}
-
 div.d3-tooltip {
   position: absolute;
   text-align: center;
-  width: 150px;
-  height: 80px;
   padding: 2px;
   font: 12px sans-serif;
-  background: lightsteelblue;
+  background: $eb-orange;
   border: 0px;
   border-radius: 8px;
   pointer-events: none;
