@@ -1,6 +1,6 @@
 date	numDays	location	comment	occupation
 01-Jan-2012	0	""	""	break
-01-Feb-2012	0	""	""	break
+01-Feb-2012	0	""	""	student
 01-Mar-2012	8	 Red River Gorge, KY	First climbing trip	student
 01-Apr-2012	2	""	""	student
 01-May-2012	0	""	""	break
@@ -11,9 +11,9 @@ date	numDays	location	comment	occupation
 01-Oct-2012	1	""	""	student
 01-Nov-2012	0	""	""	student
 01-Dec-2012	3	""	""	student
-01-Jan-2013	7	Bishop, CA	First bouldering trip	 break
+01-Jan-2013	7	Bishop, CA	First bouldering trip	break
 01-Feb-2013	0	""	""	student
-01-Mar-2013	8	 Red River Gorge, KY	""	 student
+01-Mar-2013	8	 Red River Gorge, KY	""	student
 01-Apr-2013	1	""	""	student
 01-May-2013	10	New River Gorge, WV	""	break
 01-Jun-2013	4	""	""	intern

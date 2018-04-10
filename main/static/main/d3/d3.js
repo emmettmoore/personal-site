@@ -11,6 +11,33 @@ CHART_MARGIN = {top: 0, right: 20, bottom: 50, left: 20};
 CHART_WIDTH = 964;
 CHART_HEIGHT = 300;
 
+OCCUPATION_COLOR_MAP = {
+    "student": {
+        "title": "College Student",
+        "color": "#4d2612"
+    },
+    "break": {
+        "title": "College Break",
+        "color": "#ff7300",
+    },
+    "waiter": {
+        "title": "Waiter",
+        "color": "#fff52e",
+    },
+    "intern": {
+        "title": "Intern at IBM",
+        "color": "#99e0ff",
+    },
+    "unemployed": {
+        "title": "Unemployed",
+        "color": "#ff0000",
+    },
+    "insight": {
+        "title": "Engineer at InsightSquared",
+        "color": "#00B3E9",
+    }
+}
+
 
 function buildCharts(data) {
     parseDate = d3.timeParse("%d-%b-%Y");
@@ -18,13 +45,16 @@ function buildCharts(data) {
         data[i].date = parseDate(data[i].date);
         data[i].numDays = Number(data[i].numDays);
     }
-    makeLineGraph(data);
-}
-
-function makeLineGraph(data) {
-    console.log(data);
     svg = d3.select(".line-graph");
     sizeSVG(svg);
+    makeOccupationGraph(svg, data);
+    legend = d3.select(".legend");
+    makeLineGraph(svg, data);
+    makeLegend(legend);
+}
+
+function makeLineGraph(svg, data) {
+    console.log(data);
     lineGraph = getLineGraph(svg);
     xAxis = getXAxis();
     console.log(xAxis);
@@ -97,8 +127,9 @@ function getLine(xAxis, yAxis) {
         .curve(d3.curveCatmullRom.alpha(0.5))
 }
 
-function addLine(lineGraph, data, xAxis, yAxis) {
-    lineGraph.append("path")
+function addLine(svg, data, xAxis, yAxis) {
+    console.log(data)
+    svg.append("path")
         .datum(data)
         .attr("fill", "none")
         .attr("stroke", "steelblue")
@@ -149,4 +180,78 @@ function addDots(lineGraph, data, xAxis, yAxis) {
            .duration(500)
            .style("opacity", 0);
        });
+}
+
+function makeOccupationGraph(svg, data) {
+    x_offset = 20;
+    step_size = CHART_WIDTH / data.length;
+    occupationGraph = svg.append("g");
+    for (i=0; i< data.length; i++) {
+        x = x_offset + (step_size * i);
+        color = OCCUPATION_COLOR_MAP[data[i].occupation].color;
+        addRect(occupationGraph, color, x, CHART_HEIGHT, CHART_WIDTH / data.length);
+    }
+}
+
+function addRect(svg, color, x, height, width) {
+    svg.append("rect")
+        .attr("width", width+"px")  //13
+        .attr("height", height+"px") //300
+        .attr("x", x)
+        .attr("fill-opacity", "0.7")
+        .attr("fill", color)
+        .attr("shape-rendering","crispEdges")
+}
+
+function makeLegend(svg) {
+    svg.attr("width", "200px")
+        .attr("height", CHART_HEIGHT + CHART_MARGIN.top + CHART_MARGIN.bottom)
+    keys = Object.keys(OCCUPATION_COLOR_MAP);
+    y = 10;
+    for (i=0; i<keys.length; i++) {
+        title = OCCUPATION_COLOR_MAP[keys[i]].title;
+        color = OCCUPATION_COLOR_MAP[keys[i]].color;
+        addLegendItem(svg, title, color, y);
+        y += 30;
+    }
+    fakeLineData = [3, 17];
+    svg.append("path")
+        .datum(fakeLineData)
+        .attr("fill", "none")
+        .attr("stroke", "steelblue")
+        .attr("stroke-linejoin", "round")
+        .attr("stroke-linecap", "round")
+        .attr("stroke-width", 1.5)
+        .attr("d", d3.line().x(function(d) { console.log(d);return d; })
+                            .y(function(d) { return y; })
+        )
+    svg.selectAll("dot")
+        .data(fakeLineData)
+        .enter().append("circle")
+        .attr("r", 3)
+        .attr("cx", function(d) { return d; })
+        .attr("cy" , y);
+    svg.append("text")
+        .attr("x", 30)
+        .attr("y", y+5)
+        .attr("font-size", 10)
+        .text("Days Climbed per Month");
+
+}
+
+function addLegendItem(svg, name, color, y) {
+    svg.append("circle")
+        .attr("r", 10)
+        .attr("cx", 10)
+        .attr("cy", y)
+        .attr("fill-opacity", "0.7")
+        .attr("fill", color)
+        .attr("stroke-width", 3);
+    svg.append("text")
+        .attr("x", 30)
+        .attr("y", y+5)
+        .attr("font-size", 10)
+        .text(name);
+
+
 }
