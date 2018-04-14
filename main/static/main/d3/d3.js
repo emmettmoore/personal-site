@@ -47,19 +47,17 @@ function buildCharts(data) {
     }
     svg = d3.select(".line-graph");
     sizeSVG(svg);
-    makeOccupationGraph(svg, data);
+    xAxis = getXAxis();
+    yAxis = getYAxis();
+    makeOccupationGraph(svg, data, xAxis, yAxis);
     legend = d3.select(".legend");
-    makeLineGraph(svg, data);
+    makeLineGraph(svg, data, xAxis, yAxis);
     makeLegend(legend);
 }
 
-function makeLineGraph(svg, data) {
-    console.log(data);
+function makeLineGraph(svg, data, xAxis, yAxis) {
     lineGraph = getLineGraph(svg);
-    xAxis = getXAxis();
-    console.log(xAxis);
     addXAxis(lineGraph, xAxis);
-    yAxis = getYAxis();
     addYAxis(lineGraph, yAxis);
     addLine(lineGraph, data, xAxis, yAxis);
     addDots(lineGraph, data, xAxis, yAxis);
@@ -128,7 +126,6 @@ function getLine(xAxis, yAxis) {
 }
 
 function addLine(svg, data, xAxis, yAxis) {
-    console.log(data)
     svg.append("path")
         .datum(data)
         .attr("fill", "none")
@@ -182,21 +179,23 @@ function addDots(lineGraph, data, xAxis, yAxis) {
        });
 }
 
-function makeOccupationGraph(svg, data) {
-    x_offset = 20;
-    step_size = CHART_WIDTH / data.length;
+function makeOccupationGraph(svg, data, xAxis, yAxis) {
     occupationGraph = svg.append("g");
     for (i=0; i< data.length; i++) {
-        x = x_offset + (step_size * i);
-        color = OCCUPATION_COLOR_MAP[data[i].occupation].color;
-        addRect(occupationGraph, color, x, CHART_HEIGHT, CHART_WIDTH / data.length);
+        new_x = xAxis(data[i].date) + Y_AXIS_TICK_MARGIN + CHART_MARGIN.left;
+        if (i != 0) {
+            width = new_x - x;
+            color = OCCUPATION_COLOR_MAP[data[i].occupation].color;
+            addRect(occupationGraph, color, x, CHART_HEIGHT, width);
+        }
+        x = new_x;
     }
 }
 
 function addRect(svg, color, x, height, width) {
     svg.append("rect")
-        .attr("width", width+"px")  //13
-        .attr("height", height+"px") //300
+        .attr("width", width)
+        .attr("height", height)
         .attr("x", x)
         .attr("fill-opacity", "0.7")
         .attr("fill", color)
@@ -222,7 +221,7 @@ function makeLegend(svg) {
         .attr("stroke-linejoin", "round")
         .attr("stroke-linecap", "round")
         .attr("stroke-width", 1.5)
-        .attr("d", d3.line().x(function(d) { console.log(d);return d; })
+        .attr("d", d3.line().x(function(d) { return d; })
                             .y(function(d) { return y; })
         )
     svg.selectAll("dot")
