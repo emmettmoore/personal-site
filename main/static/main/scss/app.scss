@@ -48,7 +48,9 @@ nav.top-bar {
 
 .about-me {
   padding-top: 40px;
-  max-width: 50%;
+  li {
+    list-style-type: none;
+  }
 }
 
 // media query 750 px: move icons

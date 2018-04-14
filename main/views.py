@@ -5,9 +5,5 @@ def home(request):
     return render(request, 'main/home.html', {})
 
 
-def climbing_viz(request):
-    return render(request, 'main/climbing_viz.html', {})
-
-
-def timeline(request):
-    return render(request, 'main/timeline.html', {})
+def resume(request):
+    return render(request, 'main/resume.html', {})

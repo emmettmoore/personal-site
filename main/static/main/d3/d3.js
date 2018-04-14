@@ -157,7 +157,7 @@ function addDots(lineGraph, data, xAxis, yAxis) {
                 html += "<strong>"+d.location+"</strong><br>";
             }
             html += d3.timeFormat('%B %Y')(d.date) + "<br>";
-            html += d.numDays + " Days<br>";
+            html += d.numDays + " Climbing Days<br>";
             if (d.comment !== "") {
                 height += 40;
                 html += d.comment + "</p>";
@@ -230,7 +230,7 @@ function makeLegend(svg) {
         .attr("x", 30)
         .attr("y", y+5)
         .attr("font-size", 12)
-        .text("Days Climbed per Month");
+        .text("Outdoor Climbing Days/Mo.");
 
 }
 
