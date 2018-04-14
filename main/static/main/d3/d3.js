@@ -12,29 +12,25 @@ CHART_WIDTH = 964;
 CHART_HEIGHT = 300;
 
 OCCUPATION_COLOR_MAP = {
-    "student": {
-        "title": "College Student",
-        "color": "#4d2612"
-    },
-    "break": {
-        "title": "College Break",
-        "color": "#ff7300",
+    "unemployed": {
+        "title": "Traveling",
+        "color": "#870b00",
     },
     "waiter": {
         "title": "Waiter",
-        "color": "#fff52e",
+        "color": "#bab337",
+    },
+    "student": {
+        "title": "College Student",
+        "color": "#99e0ff"
     },
     "intern": {
-        "title": "Intern at IBM",
-        "color": "#99e0ff",
-    },
-    "unemployed": {
-        "title": "Unemployed",
-        "color": "#ff0000",
+        "title": "Internship",
+        "color": "#077354",
     },
     "insight": {
-        "title": "Engineer at InsightSquared",
-        "color": "#00B3E9",
+        "title": "InsightSquared",
+        "color": "#2052a3",
     }
 }
 
@@ -233,7 +229,7 @@ function makeLegend(svg) {
     svg.append("text")
         .attr("x", 30)
         .attr("y", y+5)
-        .attr("font-size", 10)
+        .attr("font-size", 12)
         .text("Days Climbed per Month");
 
 }
@@ -249,7 +245,7 @@ function addLegendItem(svg, name, color, y) {
     svg.append("text")
         .attr("x", 30)
         .attr("y", y+5)
-        .attr("font-size", 10)
+        .attr("font-size", 12)
         .text(name);
 
 
