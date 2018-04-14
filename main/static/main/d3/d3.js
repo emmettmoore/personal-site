@@ -125,7 +125,7 @@ function addLine(svg, data, xAxis, yAxis) {
     svg.append("path")
         .datum(data)
         .attr("fill", "none")
-        .attr("stroke", "steelblue")
+        .attr("stroke", "#E08002")
         .attr("stroke-linejoin", "round")
         .attr("stroke-linecap", "round")
         .attr("stroke-width", 1.5)
