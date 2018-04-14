@@ -149,7 +149,7 @@ function addDots(lineGraph, data, xAxis, yAxis) {
         .data(data)
         .enter().append("circle")
         .attr("r", 3)
-        .attr("cx", function(d) { return xAxis(d.date) + Y_AXIS_TICK_MARGIN; })
+        .attr("cx", function(d) { return Math.max(xAxis(d.date) + Y_AXIS_TICK_MARGIN, 0); })
         .attr("cy", function(d) { return yAxis(d.numDays); })
         .on("mouseover", function(d) {
             tooltip.transition().duration(200).style("opacity", 0.9)
@@ -182,7 +182,7 @@ function addDots(lineGraph, data, xAxis, yAxis) {
 function makeOccupationGraph(svg, data, xAxis, yAxis) {
     occupationGraph = svg.append("g");
     for (i=0; i< data.length; i++) {
-        new_x = xAxis(data[i].date) + Y_AXIS_TICK_MARGIN + CHART_MARGIN.left;
+        new_x = Math.max(xAxis(data[i].date) + Y_AXIS_TICK_MARGIN + CHART_MARGIN.left, CHART_MARGIN.left);
         if (i != 0) {
             width = new_x - x;
             color = OCCUPATION_COLOR_MAP[data[i].occupation].color;
