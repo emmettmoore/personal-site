@@ -14,11 +14,11 @@ CHART_HEIGHT = 300;
 OCCUPATION_COLOR_MAP = {
     "unemployed": {
         "title": "Traveling",
-        "color": "#870b00",
+        "color": "#913d3d",
     },
     "waiter": {
         "title": "Waiter",
-        "color": "#bab337",
+        "color": "#e2a428",
     },
     "student": {
         "title": "College Student",
@@ -26,11 +26,11 @@ OCCUPATION_COLOR_MAP = {
     },
     "intern": {
         "title": "Internship",
-        "color": "#077354",
+        "color": "#41913d",
     },
     "insight": {
         "title": "InsightSquared",
-        "color": "#2052a3",
+        "color": "#3169c4",
     }
 }
 
@@ -193,7 +193,7 @@ function addRect(svg, color, x, height, width) {
         .attr("width", width)
         .attr("height", height)
         .attr("x", x)
-        .attr("fill-opacity", "0.7")
+        .attr("fill-opacity", "1")
         .attr("fill", color)
         .attr("shape-rendering","crispEdges")
 }
@@ -239,7 +239,7 @@ function addLegendItem(svg, name, color, y) {
         .attr("r", 10)
         .attr("cx", 10)
         .attr("cy", y)
-        .attr("fill-opacity", "0.7")
+        .attr("fill-opacity", "1")
         .attr("fill", color)
         .attr("stroke-width", 3);
     svg.append("text")
