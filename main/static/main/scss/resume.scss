@@ -1,0 +1,33 @@
+@import 'eb-colors';
+.section-wrapper {
+  marging: 0px 20px 0px 20px;
+  display: flex;
+  flex-direction: row;
+  .entity {
+    margin: 20px;
+    border-right: 1px solid $eb-blue;
+    flex: 2;
+  }
+  .blurb {
+    margin: 12px;
+    flex: 3;
+    ul {
+      overflow: hidden;
+      list-style-type: none;
+    }
+    li {
+      line-height: 1.5em;
+      width: 50%;
+      display: inline;
+      font-size: inherit;
+      float: left;
+    }
+  }
+  img.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+  }
+}
+

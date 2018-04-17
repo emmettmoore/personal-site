@@ -7,10 +7,61 @@
   margin-top: 20px;
 }
 
+.small-space {
+  margin: 20px;
+}
+
+.medium-space {
+  margin: 20px;
+}
+
+.small-space-left {
+  margin-left: 8px;
+}
+
 .medium-space-left {
   margin-left: 20px;
 }
 
+.medium-padding-top {
+  padding-top: 20px;
+}
+
+.small-padding {
+  padding: 20px;
+}
+
+.medium-padding {
+  padding: 20px;
+}
+
+.small-padding-left {
+  padding-left: 8px;
+}
+
+.medium-padding-left {
+  padding-left: 20px;
+}
 .bold {
   font-weight: 700;
+}
+
+.inline-block {
+  display: inline-block;
+}
+
+.border-bottom {
+  border-bottom: 1px solid $eb-blue;
+}
+
+.border-top {
+  border-top: 1px solid black;
+}
+
+.border-left {
+  border-left: 1px solid black;
+}
+
+.border-right {
+  border-right: 1px solid black;
 }

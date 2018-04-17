@@ -1,6 +1,60 @@
 {% extends "main/base.html" %}
 {% load staticfiles %}
+{% block extra_assets %}
+  <link rel="stylesheet" type="text/css"
+        href="{% static "main/build/css/resume.css" %}">
+{% endblock extra_assets %}
 
 {% block viewport_content %}
-Coming Soon
+  <div class="section-wrapper border-bottom">
+    <div class="entity">
+      <img src="{% static "main/assets/is2-logo.png" %}" height="200" width="200"/>
+      <h4 class="bold inline-block">InsightSquared</h4>
+    </div>
+    <div class="blurb">
+      <h5 class="bold">Software Engineer</h5>
+      <em>June-July 2014, September 2015 - Present (~3 years)</em>
+      <p>
+        InsightSquared delivers comprehensive business intelligence reporting to help executives and sales operations leaders make better data-driven decisions.
+      </p>
+      <p>
+        At InsightSquared, I built a wide-ranging set of customer facing services that helped customers analyze their data and manage their configurations.
+      </p>
+      <h6 class="bold">Technologies Used</h6>
+      <ul>
+        <li>Django/Python
+        <li>Coffeescript
+        <li>Knockout.js
+        <li>MYSQL
+        <li>Linux/Unix Systems
+        <li>Foundation
+        <li>AWS
+      </ul>
+
+    </div>
+  </div>
+  <div class="section-wrapper border-bottom">
+    <div class="entity">
+      <img class="center" src="{% static "main/assets/ibm-logo.svg" %}" />
+    </div>
+    <div class="blurb">
+      <h5 class="bold inline-block">Software Engineering Intern</h5>
+      <em>June-July 2013 (3 months)</em>
+      <p>
+      At IBM, I used Component Object Model to facilitate integration of IBM applications and Microsoft Outlook. I also researched open-source solutions to this integration problem.
+      </p>
+    </div>
+  </div>
+  <div class="section-wrapper">
+    <div class="entity">
+      <img class="center" src="{% static "main/assets/tufts-logo.png" %}" />
+    </div>
+    <div class="blurb">
+      <h5 class="bold inline-block">BS Computer Science</h5>
+      <em> 2011-2015</em>
+      <p><em>magna cum laude</em></p>
+
+    </div>
+  </div>
+
 {% endblock viewport_content %}
