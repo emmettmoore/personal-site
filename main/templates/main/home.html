@@ -4,28 +4,38 @@
   <link rel="stylesheet" type="text/css"
         href="{% static "main/build/css/timeline.css" %}">
 {% endblock extra_assets %}
-{% block after_body_scripts %}
-  {{ block.super }}
-  <script src="https://d3js.org/d3.v4.min.js"></script>
-  <script src="{% static "main/d3/d3.js" %}"></script>
-{% endblock after_body_scripts %}
 
 {% block viewport_content %}
   <div class="about-me">
-    <div class="medium-space-left">
-      <h5 class="bold">I am a technologist, living in Somerville, MA.</h5>
+    <div class="medium-space-left text-portion">
+      <h5 class="bold">Hello! My name is Emmett, and I live in Somerville, MA.</h5>
       <p>
-        <ul>
-          <li>I graduated from <a href="https://www.tufts.edu">Tufts University</a> in 2015 with a BS in <strong>Computer Science</strong>.</li>
-          <li>I work as a <strong>software engineer</strong> at <a href="https://www.insightsquared.com" target="_blank">InsightSquared</a>.</li>
-          <li>In my free time, I enjoy <strong>rock climbing</strong>.</li>
-          <li>I love using <strong>data visualization</strong> to tell a story.</li>
-        </ul>
+        I spent my childhood in Houston, TX, but moved to the greater Boston area just in time for my angsty teenage years.
       </p>
+      <p>
+      I graduated from <a href="https://www.tufts.edu">Tufts University</a> in 2015 with a BS in <strong>Computer Science</strong>. Growing up, both my parents were programmers. It was only natural that I would try to avoid my fate for a semester or two, but I eventually came to follow in their footsteps. After taking one class, I was hooked. <strong>There are a lot of great things about computer science, but the thing I love the most is the opportunity to use technical skills to solve tangible problems that are important to me.</strong>
+      </p>
+      <p>
+        While in school, I discovered the best sport in the world. I am obviously talking about rock climbing. <strong>Climbing requires persistence and creativity, and I found that as I grew to become a better climber, I also learned how to think for myself.</strong> I have tried to apply that skill to all facets of my life with varying degrees of success. Over the years I have happily let climbing drag me to some of the most beautiful places in the world and introduce me to many of my best friends along the way.
+      </p>
+      <p>
+        Since graduation, I have applied my interesting in programming to my job as a full stack software engineer at <a href="https://www.insightsquared.com" target="_blank">InsightSquared</a>.
+      </p>
+      <p>
+        When I am not working or climbing, I am usually:
+        <ul>
+          <li>Riding my 1980-something Univega around the city until the next thing eventually breaks and I stubbornly try to fix it myself.</li>
+          <li>Working on this site, or various other projects.</li>
+          <li>Listening to new music (I used to play, now I just listen, but maybe someday I'll get back into playing again).</li>
+          <li>Outside.</li>
+          <li>Playing with my (parents') dogs.</li>
+          <li>Reading.</li>
+          <li>Watching the Red Sox.</li>
+        </ul>
+      <p>
     </div>
-  </div>
-  <div class="timeline-wrapper">
-    <svg class="line-graph"></svg>
-    <svg class="legend"></svg>
+    <div class="image-portion">
+      <img src="https://s3.us-east-2.amazonaws.com/emmettwmoore-assets/suburban3.jpg"></img>
+    </div>
   </div>
 {% endblock viewport_content %}
