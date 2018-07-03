@@ -47,9 +47,18 @@ nav.top-bar {
 }
 
 .about-me {
+  display: flex;
   padding-top: 40px;
-  li {
-    list-style-type: none;
+  .text-portion {
+    flex: 1;
+  }
+  .image-portion {
+    flex: 1;
+    img {
+      height: 800px;
+      padding: 40px;
+    }
+
   }
 }
 
